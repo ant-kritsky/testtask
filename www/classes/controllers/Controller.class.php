@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Êëàññ ðîäèòåëü êîíòðîëëåðîâ
+ * ÐšÐ»Ð°ÑÑ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð»ÐµÑ€Ð¾Ð²
  * @author Anton Kritsky <admin@delca.ru>
  */
 class Controller

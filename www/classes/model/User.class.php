@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Модель пользователя
+ * РњРѕРґРµР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
  * @author Anton Kritsky <admin@delca.ru>
  */
 class User extends Model
@@ -14,7 +14,7 @@ class User extends Model
     protected $_table = 'users';
 
     /**
-     * Добавление пользователя
+     * Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
      */
     public function add($login = null, $password = null, $name = null, $ext = null)
     {
@@ -31,7 +31,7 @@ class User extends Model
     }
 
     /**
-     * Обновление хэша пользователя
+     * РћР±РЅРѕРІР»РµРЅРёРµ С…СЌС€Р° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
      */
     public function updateHash($hash = null)
     {
@@ -43,7 +43,7 @@ class User extends Model
     }
 
     /**
-     * Получение пользователя по логину и паролю
+     * РџРѕР»СѓС‡РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ Р»РѕРіРёРЅСѓ Рё РїР°СЂРѕР»СЋ
      * @return User
      */
     public function getByLoginAndPass($login = null, $password = null)
@@ -58,7 +58,7 @@ class User extends Model
     }
 
     /**
-     * Получение пользователя по хэшу
+     * РџРѕР»СѓС‡РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ С…СЌС€Сѓ
      */
     public function getByHash($hash = null)
     {

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Класс контроллера Index
+ * РљР»Р°СЃСЃ РєРѕРЅС‚СЂРѕР»Р»РµСЂР° Index
  * @author Anton Kritsky <admin@delca.ru>
  */
 class IndexController extends Controller
 {
     /**
-     * Экшен профиля
-     * если не авторизован - рендерим форму авторизации
+     * Р­РєС€РµРЅ РїСЂРѕС„РёР»СЏ
+     * РµСЃР»Рё РЅРµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅ - СЂРµРЅРґРµСЂРёРј С„РѕСЂРјСѓ Р°РІС‚РѕСЂРёР·Р°С†РёРё
      */
     public function indexAction()
     {
@@ -21,7 +21,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Экшен авторизации
+     * Р­РєС€РµРЅ Р°РІС‚РѕСЂРёР·Р°С†РёРё
      */
     public function loginAction()
     {
@@ -30,7 +30,7 @@ class IndexController extends Controller
             $password = md5(trim($_POST['password']));
 
             if ($this->auth->doAuth($login, $password)) {
-                // сли авторизация прошла редиректим на главную
+                // СЃР»Рё Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РїСЂРѕС€Р»Р° СЂРµРґРёСЂРµРєС‚РёРј РЅР° РіР»Р°РІРЅСѓСЋ
                 header('Location: /');
             } else {
                 $this->view->set('error', $_SESSION['error']);
@@ -42,7 +42,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Экшен выхода пользователя из профиля
+     * Р­РєС€РµРЅ РІС‹С…РѕРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РёР· РїСЂРѕС„РёР»СЏ
      */
     public function logoutAction()
     {
@@ -51,7 +51,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Экшен уведомления о успешной регистрации
+     * Р­РєС€РµРЅ СѓРІРµРґРѕРјР»РµРЅРёСЏ Рѕ СѓСЃРїРµС€РЅРѕР№ СЂРµРіРёСЃС‚СЂР°С†РёРё
      */
     public function registration_successAction()
     {
@@ -59,7 +59,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Экшен регистрации
+     * Р­РєС€РµРЅ СЂРµРіРёСЃС‚СЂР°С†РёРё
      */
     public function registrationAction()
     {
@@ -79,7 +79,7 @@ class IndexController extends Controller
             $min_message = _("Please enter no more than {0} characters.");
             $max_message = _("Please enter at least {0} characters.");
 
-            // Валидация имени
+            // Р’Р°Р»РёРґР°С†РёСЏ РёРјРµРЅРё
             $name_length = mb_strlen($name);
             if($name_length < 3){
                 $errors['name'] = str_replace('{0}', 3, $max_message);
@@ -88,7 +88,7 @@ class IndexController extends Controller
                 $errors['name'] = str_replace('{0}', 15, $min_message);
             }
 
-            // Валидация пароля
+            // Р’Р°Р»РёРґР°С†РёСЏ РїР°СЂРѕР»СЏ
             $pas_length = mb_strlen($password);
             if($pas_length < 3){
                 $errors['password'] = str_replace('{0}', 3, $max_message);
@@ -97,7 +97,7 @@ class IndexController extends Controller
                 $errors['password'] = str_replace('{0}', 15, $min_message);
             }
 
-            // Валидация повтора пароля
+            // Р’Р°Р»РёРґР°С†РёСЏ РїРѕРІС‚РѕСЂР° РїР°СЂРѕР»СЏ
             $pas_length = mb_strlen($password_again);
             if($pas_length < 3){
                 $errors['password_again'] = str_replace('{0}', 3, $max_message);
@@ -109,15 +109,15 @@ class IndexController extends Controller
                 $errors['password_again'] = _("Please enter the same value again.");
             }
 
-            // Валидация загружаемого файла
-            // Если файл отправлен без ожибки
+            // Р’Р°Р»РёРґР°С†РёСЏ Р·Р°РіСЂСѓР¶Р°РµРјРѕРіРѕ С„Р°Р№Р»Р°
+            // Р•СЃР»Рё С„Р°Р№Р» РѕС‚РїСЂР°РІР»РµРЅ Р±РµР· РѕР¶РёР±РєРё
             $ext = '';
             $valid_image = false;
             if($_FILES["file"]["size"] and $_FILES["file"]["error"] == 0){
                 $fname = $_FILES["file"]["name"];
                 $tmp_name = $_FILES["file"]["tmp_name"];
 
-                // Если файл нужного расширения
+                // Р•СЃР»Рё С„Р°Р№Р» РЅСѓР¶РЅРѕРіРѕ СЂР°СЃС€РёСЂРµРЅРёСЏ
                 $ext = strtolower(end(explode('.',$fname)));
                 if(!in_array($ext, array('gif', 'jpg', 'png'))){
                     $errors['file'] = _("Available extensions - gif,jpg,png");

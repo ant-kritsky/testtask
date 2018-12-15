@@ -1,4 +1,4 @@
-msgid ""
+﻿msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2016-06-24 17:06+0600\n"
@@ -17,39 +17,39 @@ msgstr ""
 
 #: classes/Auth.class.php:42
 msgid "detected hacking attempt!"
-msgstr "обнаружена попытка взлома!"
+msgstr "РѕР±РЅР°СЂСѓР¶РµРЅР° РїРѕРїС‹С‚РєР° РІР·Р»РѕРјР°!"
 
 #: classes/Auth.class.php:55
 msgid "Not valid login or password"
-msgstr "Пароль или имя пользователя указаны не верно."
+msgstr "РџР°СЂРѕР»СЊ РёР»Рё РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СѓРєР°Р·Р°РЅС‹ РЅРµ РІРµСЂРЅРѕ."
 
 #: classes/controllers/IndexController.class.php:76 templates/layout.php:20
 msgid "Please enter a valid email address."
-msgstr "Введите правильный email "
+msgstr "Р’РІРµРґРёС‚Рµ РїСЂР°РІРёР»СЊРЅС‹Р№ email "
 
 #: classes/controllers/IndexController.class.php:79 templates/layout.php:22
 msgid "Please enter no more than {0} characters."
-msgstr "Пожалуйста введите не более {0} символов"
+msgstr "РџРѕР¶Р°Р»СѓР№СЃС‚Р° РІРІРµРґРёС‚Рµ РЅРµ Р±РѕР»РµРµ {0} СЃРёРјРІРѕР»РѕРІ"
 
 #: classes/controllers/IndexController.class.php:80 templates/layout.php:23
 msgid "Please enter at least {0} characters."
-msgstr "Пожалуйста введите не менее {0} символов"
+msgstr "РџРѕР¶Р°Р»СѓР№СЃС‚Р° РІРІРµРґРёС‚Рµ РЅРµ РјРµРЅРµРµ {0} СЃРёРјРІРѕР»РѕРІ"
 
 #: classes/controllers/IndexController.class.php:109 templates/layout.php:21
 msgid "Please enter the same value again."
-msgstr "Введите предыдущее значение повторно"
+msgstr "Р’РІРµРґРёС‚Рµ РїСЂРµРґС‹РґСѓС‰РµРµ Р·РЅР°С‡РµРЅРёРµ РїРѕРІС‚РѕСЂРЅРѕ"
 
 #: classes/controllers/IndexController.class.php:123
 msgid "Available extensions - gif,jpg,png"
-msgstr "Разрешенные расширения- gif,jpg,png"
+msgstr "Р Р°Р·СЂРµС€РµРЅРЅС‹Рµ СЂР°СЃС€РёСЂРµРЅРёСЏ- gif,jpg,png"
 
 #: templates/index.php:2
 msgid "Hello"
-msgstr "Привет"
+msgstr "РџСЂРёРІРµС‚"
 
 #: templates/index.php:13 templates/register.php:5
 msgid "Name"
-msgstr "Имя"
+msgstr "РРјСЏ"
 
 #: templates/index.php:17 templates/login.php:8 templates/register.php:16
 msgid "Email"
@@ -57,99 +57,99 @@ msgstr "Email"
 
 #: templates/index.php:21
 msgid "Registered"
-msgstr "Зарегистрирован"
+msgstr "Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ"
 
 #: templates/index.php:25
 msgid "logout"
-msgstr "Выйти из профиля"
+msgstr "Р’С‹Р№С‚Рё РёР· РїСЂРѕС„РёР»СЏ"
 
 #: templates/layout.php:18
 msgid "This field is required."
-msgstr "Это поле является обязательным"
+msgstr "Р­С‚Рѕ РїРѕР»Рµ СЏРІР»СЏРµС‚СЃСЏ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рј"
 
 #: templates/layout.php:19
 msgid "Please fix this field."
-msgstr "Пожалуйста исправте это поле"
+msgstr "РџРѕР¶Р°Р»СѓР№СЃС‚Р° РёСЃРїСЂР°РІС‚Рµ СЌС‚Рѕ РїРѕР»Рµ"
 
 #: templates/login.php:1
 msgid "You can"
-msgstr "Вы можете"
+msgstr "Р’С‹ РјРѕР¶РµС‚Рµ"
 
 #: templates/login.php:1 templates/registration_success.php:3
 msgid "enter"
-msgstr "войти"
+msgstr "РІРѕР№С‚Рё"
 
 #: templates/login.php:1
 msgid "or"
-msgstr "или"
+msgstr "РёР»Рё"
 
 #: templates/login.php:1 templates/register.php:59
 msgid "registration"
-msgstr "зарегистрироваться"
+msgstr "Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ"
 
 #: templates/login.php:11 templates/register.php:19
 msgid "Insert your email"
-msgstr "Введите ваш email"
+msgstr "Р’РІРµРґРёС‚Рµ РІР°С€ email"
 
 #: templates/login.php:16 templates/register.php:38
 msgid "Password"
-msgstr "Парль"
+msgstr "РџР°СЂР»СЊ"
 
 #: templates/login.php:19 templates/register.php:41
 msgid "Insert your password"
-msgstr "Введите ваш пароль"
+msgstr "Р’РІРµРґРёС‚Рµ РІР°С€ РїР°СЂРѕР»СЊ"
 
 #: templates/login.php:23
 msgid "Enter"
-msgstr "Вход"
+msgstr "Р’С…РѕРґ"
 
 #: templates/register.php:1
 msgid "Registration"
-msgstr "Регистрация"
+msgstr "Р РµРіРёСЃС‚СЂР°С†РёСЏ"
 
 #: templates/register.php:8
 msgid "Insert your name"
-msgstr "Введите ваше имя"
+msgstr "Р’РІРµРґРёС‚Рµ РІР°С€Рµ РёРјСЏ"
 
 #: templates/register.php:27
 msgid "Avatar"
-msgstr "Аватар"
+msgstr "РђРІР°С‚Р°СЂ"
 
 #: templates/register.php:30
 msgid "Insert your avatar"
-msgstr "Выберите себе аватар"
+msgstr "Р’С‹Р±РµСЂРёС‚Рµ СЃРµР±Рµ Р°РІР°С‚Р°СЂ"
 
 #: templates/register.php:49
 msgid "Password again"
-msgstr "Пароль еще раз"
+msgstr "РџР°СЂРѕР»СЊ РµС‰Рµ СЂР°Р·"
 
 #: templates/register.php:52
 msgid "Insert password again"
-msgstr "Введите пароль еще раз"
+msgstr "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РµС‰Рµ СЂР°Р·"
 
 #: templates/registration_success.php:1
 msgid "Registration success!"
-msgstr "Регистрация прошла успешно!"
+msgstr "Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!"
 
 #: templates/registration_success.php:2
 msgid "Thanks for registration!"
-msgstr "Спасибо за регистрацию!"
+msgstr "РЎРїР°СЃРёР±Рѕ Р·Р° СЂРµРіРёСЃС‚СЂР°С†РёСЋ!"
 
 #: templates/registration_success.php:3
 msgid "Now you can"
-msgstr "Теперь вы можете"
+msgstr "РўРµРїРµСЂСЊ РІС‹ РјРѕР¶РµС‚Рµ"
 
 #~ msgid "Thanks for registration!!"
-#~ msgstr "Спасибо за регистрацию!"
+#~ msgstr "РЎРїР°СЃРёР±Рѕ Р·Р° СЂРµРіРёСЃС‚СЂР°С†РёСЋ!"
 
 #~ msgid "Please"
-#~ msgstr "Пожалуйста"
+#~ msgstr "РџРѕР¶Р°Р»СѓР№СЃС‚Р°"
 
 #~ msgid "Login"
-#~ msgstr "Логин"
+#~ msgstr "Р›РѕРіРёРЅ"
 
 #~ msgid "Insert your login"
-#~ msgstr "Введите ваш логин"
+#~ msgstr "Р’РІРµРґРёС‚Рµ РІР°С€ Р»РѕРіРёРЅ"
 
 #~ msgid "Please enter a valid URL."
-#~ msgstr "Введите правильный ддрес"
+#~ msgstr "Р’РІРµРґРёС‚Рµ РїСЂР°РІРёР»СЊРЅС‹Р№ РґРґСЂРµСЃ"

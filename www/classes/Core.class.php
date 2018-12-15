@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Класс ядра
+ * РљР»Р°СЃСЃ СЏРґСЂР°
  * @author Anton Kritsky <admin@delca.ru>
  */
 class Core
@@ -22,7 +22,7 @@ class Core
     public  $actionSuffix = 'Action';
 
     /**
-     * приватный конструктор для ограничения реализации getInstance ()
+     * РїСЂРёРІР°С‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ СЂРµР°Р»РёР·Р°С†РёРё getInstance ()
      */
     private function __construct()
     {
@@ -30,7 +30,7 @@ class Core
     }
 
     /**
-     * Возвращает объект ядра
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ СЏРґСЂР°
      * @return Core
      */
     public static function getInstance()
@@ -45,7 +45,7 @@ class Core
     }
 
     /**
-     * Выполнение текущего экшена, нужного контроллера
+     * Р’С‹РїРѕР»РЅРµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ СЌРєС€РµРЅР°, РЅСѓР¶РЅРѕРіРѕ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
      */
     public function run()
     {
@@ -59,9 +59,9 @@ class Core
 
 
     /**
-     * Маршрутизация адреса
+     * РњР°СЂС€СЂСѓС‚РёР·Р°С†РёСЏ Р°РґСЂРµСЃР°
      *
-     * Разбивает текущий УРЛ на /$locale/$controller/$action
+     * Р Р°Р·Р±РёРІР°РµС‚ С‚РµРєСѓС‰РёР№ РЈР Р› РЅР° /$locale/$controller/$action
      */
     public function route()
     {
@@ -75,9 +75,9 @@ class Core
 
         $path = array_shift($urlParams);
 
-        // Если начало маршрута является префиксом локали
+        // Р•СЃР»Рё РЅР°С‡Р°Р»Рѕ РјР°СЂС€СЂСѓС‚Р° СЏРІР»СЏРµС‚СЃСЏ РїСЂРµС„РёРєСЃРѕРј Р»РѕРєР°Р»Рё
         if(array_key_exists($path, $locales)){
-            // устанавливеам язык
+            // СѓСЃС‚Р°РЅР°РІР»РёРІРµР°Рј СЏР·С‹Рє
             $_SESSION['lang'] = $path;
             $path = array_shift($urlParams);
         }
@@ -87,13 +87,13 @@ class Core
         $controllerName .= $this->controllerSuffix;
 
         $actionName = strtolower(array_shift($urlParams));
-        // Если экшн не указан
+        // Р•СЃР»Рё СЌРєС€РЅ РЅРµ СѓРєР°Р·Р°РЅ
         if (!$actionName) {
-            // И есть контроллер для первого параметра в адресе
+            // Р РµСЃС‚СЊ РєРѕРЅС‚СЂРѕР»Р»РµСЂ РґР»СЏ РїРµСЂРІРѕРіРѕ РїР°СЂР°РјРµС‚СЂР° РІ Р°РґСЂРµСЃРµ
             if(class_exists($controllerName)){
                 $actionName = "index";
             }
-            // Иначе первый параметр является экшеном для index контроллера
+            // РРЅР°С‡Рµ РїРµСЂРІС‹Р№ РїР°СЂР°РјРµС‚СЂ СЏРІР»СЏРµС‚СЃСЏ СЌРєС€РµРЅРѕРј РґР»СЏ index РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
             else{
                 $actionName = strtolower(str_replace($this->controllerSuffix, '', $controllerName));
                 $controllerName = "Index".$this->controllerSuffix;
@@ -106,7 +106,7 @@ class Core
     }
 
     /**
-     * Инициализация локализации
+     * РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р»РѕРєР°Р»РёР·Р°С†РёРё
      */
     private function init_locale()
     {
@@ -137,7 +137,7 @@ class Core
     }
 
     /**
-     * Возвращает объект PDO
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ PDO
      * @return  PDO
      */
     public function getDb()
@@ -147,7 +147,7 @@ class Core
 
 
     /**
-     * Возвращает объект авторизации
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ Р°РІС‚РѕСЂРёР·Р°С†РёРё
      * @return Auth
      */
     public function getAuth()
@@ -156,7 +156,7 @@ class Core
     }
 
     /**
-     * Заглушка для синглтона
+     * Р—Р°РіР»СѓС€РєР° РґР»СЏ СЃРёРЅРіР»С‚РѕРЅР°
      */
     private function __clone()
     {

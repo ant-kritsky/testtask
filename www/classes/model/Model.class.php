@@ -1,6 +1,6 @@
 <?php
 /**
- * Áàçîâûé êëàñ ìîäåëè
+ * Ð‘Ð°Ð·Ð¾Ð²Ñ‹Ð¹ ÐºÐ»Ð°Ñ Ð¼Ð¾Ð´ÐµÐ»Ð¸
  * @author Anton Kritsky <admin@delca.ru>
  */
 class Model
