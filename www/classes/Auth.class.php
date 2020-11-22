@@ -37,10 +37,11 @@ class Auth
     {
         // Защита от попыток взлома
         // TODO: Можно подключить каптчу, но решил обойтись без сторонних библиотек
-        if(empty($_SESSION["doAuth"]))
+        if (empty($_SESSION["doAuth"]))
             $_SESSION["doAuth"] = 1;
-        elseif($_SESSION["doAuth"] > $this->_doAuthLimit){
-            echo _('detected hacking attempt!');die;
+        elseif ($_SESSION["doAuth"] > $this->_doAuthLimit) {
+            echo _('detected hacking attempt!');
+            die;
         } else $_SESSION["doAuth"] += 1;
 
 
@@ -105,7 +106,7 @@ class Auth
      */
     public function out()
     {
-        $_SESSION = array(); //Очищаем сессию
+        $_SESSION = []; //Очищаем сессию
         session_destroy(); //Уничтожаем
     }
 }

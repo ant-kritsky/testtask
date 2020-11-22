@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Базовый клас модели
  * @author Anton Kritsky <admin@delca.ru>
@@ -11,6 +12,7 @@ class Model
     public function __construct()
     {
         $this->_db = Core::getInstance()->getDb();
+
         return $this;
     }
 
@@ -27,6 +29,7 @@ class Model
         $query = $this->_db->prepare("SELECT {$this->_table}.* FROM {$this->_table} WHERE id=:id");
         $query->bindParam(":id", $id, PDO::PARAM_INT, 11);
         $query->execute();
+
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -34,6 +37,7 @@ class Model
     {
         $query = $this->_db->prepare("SELECT {$this->_table}.* FROM {$this->_table}");
         $query->execute();
+
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 

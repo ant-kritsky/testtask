@@ -34,11 +34,11 @@
 
                 var el = document.createElement('bootstrap')
                     , transEndEventNames = {
-                        'WebkitTransition': 'webkitTransitionEnd'
-                        , 'MozTransition': 'transitionend'
-                        , 'OTransition': 'oTransitionEnd otransitionend'
-                        , 'transition': 'transitionend'
-                    }
+                    'WebkitTransition': 'webkitTransitionEnd'
+                    , 'MozTransition': 'transitionend'
+                    , 'OTransition': 'oTransitionEnd otransitionend'
+                    , 'transition': 'transitionend'
+                }
                     , name
 
                 for (name in transEndEventNames) {
@@ -50,8 +50,8 @@
             }())
 
             return transitionEnd && {
-                    end: transitionEnd
-                }
+                end: transitionEnd
+            }
 
         })()
 
@@ -88,8 +88,8 @@
 
     var dismiss = '[data-dismiss="alert"]'
         , Alert = function (el) {
-            $(el).on('click', dismiss, this.close)
-        }
+        $(el).on('click', dismiss, this.close)
+    }
 
     Alert.prototype.close = function (e) {
         var $this = $(this)
@@ -457,7 +457,8 @@
 
     $(document).on('click.carousel.data-api', '[data-slide], [data-slide-to]', function (e) {
         var $this = $(this), href
-            , $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
+            ,
+            $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
             , options = $.extend({}, $target.data(), $this.data())
             , slideIndex
 
@@ -568,10 +569,10 @@
         , transition: function (method, startEvent, completeEvent) {
             var that = this
                 , complete = function () {
-                    if (startEvent.type == 'show') that.reset()
-                    that.transitioning = 0
-                    that.$element.trigger(completeEvent)
-                }
+                if (startEvent.type == 'show') that.reset()
+                that.transitioning = 0
+                that.$element.trigger(completeEvent)
+            }
 
             this.$element.trigger(startEvent)
 
@@ -630,8 +631,8 @@
     $(document).on('click.collapse.data-api', '[data-toggle=collapse]', function (e) {
         var $this = $(this), href
             , target = $this.attr('data-target')
-                || e.preventDefault()
-                || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+            || e.preventDefault()
+            || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
             , option = $(target).data('collapse') ? 'toggle' : $this.data()
         $this[$(target).hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
         $(target).collapse(option)
@@ -668,11 +669,11 @@
 
     var toggle = '[data-toggle=dropdown]'
         , Dropdown = function (element) {
-            var $el = $(element).on('click.dropdown.data-api', this.toggle)
-            $('html').on('click.dropdown.data-api', function () {
-                $el.parent().removeClass('open')
-            })
-        }
+        var $el = $(element).on('click.dropdown.data-api', this.toggle)
+        $('html').on('click.dropdown.data-api', function () {
+            $el.parent().removeClass('open')
+        })
+    }
 
     Dropdown.prototype = {
 
@@ -941,9 +942,9 @@
         , hideWithTransition: function () {
             var that = this
                 , timeout = setTimeout(function () {
-                    that.$element.off($.support.transition.end)
-                    that.hideModal()
-                }, 500)
+                that.$element.off($.support.transition.end)
+                that.hideModal()
+            }, 500)
 
             this.$element.one($.support.transition.end, function () {
                 clearTimeout(timeout)
@@ -1046,7 +1047,8 @@
         var $this = $(this)
             , href = $this.attr('href')
             , $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-            , option = $target.data('modal') ? 'toggle' : $.extend({remote: !/#/.test(href) && href}, $target.data(), $this.data())
+            ,
+            option = $target.data('modal') ? 'toggle' : $.extend({remote: !/#/.test(href) && href}, $target.data(), $this.data())
 
         e.preventDefault()
 
@@ -1312,7 +1314,7 @@
 
         , fixTitle: function () {
             var $e = this.$element
-            if ($e.attr('title') || typeof($e.attr('data-original-title')) != 'string') {
+            if ($e.attr('title') || typeof ($e.attr('data-original-title')) != 'string') {
                 $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
             }
         }
@@ -1595,9 +1597,9 @@
                     var $el = $(this)
                         , href = $el.data('target') || $el.attr('href')
                         , $href = /^#\w/.test(href) && $(href)
-                    return ( $href
+                    return ($href
                         && $href.length
-                        && [[$href.position().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href]] ) || null
+                        && [[$href.position().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href]]) || null
                 })
                 .sort(function (a, b) {
                     return a[0] - b[0]
@@ -1775,8 +1777,8 @@
         , activate: function (element, container, callback) {
             var $active = container.find('> .active')
                 , transition = callback
-                    && $.support.transition
-                    && $active.hasClass('fade')
+                && $.support.transition
+                && $active.hasClass('fade')
 
             function next() {
                 $active
@@ -2236,8 +2238,8 @@
 
         affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
             false : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ?
-            'bottom' : offsetTop != null && scrollTop <= offsetTop ?
-            'top' : false
+                'bottom' : offsetTop != null && scrollTop <= offsetTop ?
+                    'top' : false
 
         if (this.affixed === affix) return
 

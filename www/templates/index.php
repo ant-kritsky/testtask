@@ -2,9 +2,9 @@
     <?php echo _('Hello') ?> <?php echo $this->get('user')->name ?>!
 </h3>
 <div class="row">
-    <?php if($this->get('user')->file_ext): ?>
+    <?php if ($this->get('user')->file_ext): ?>
         <div class="span2">
-            <img src="/uploads/<?php echo $this->get('user')->id ?>.<?php echo $this->get('user')->file_ext ?>" />
+            <img src="/uploads/<?php echo $this->get('user')->id ?>.<?php echo $this->get('user')->file_ext ?>"/>
         </div>
     <?php endif ?>
     <div class="span4">

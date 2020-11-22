@@ -18,8 +18,8 @@ class Core
     public static $actionName;
 
 
-    public  $controllerSuffix =  'Controller';
-    public  $actionSuffix = 'Action';
+    public $controllerSuffix = 'Controller';
+    public $actionSuffix = 'Action';
 
     /**
      * приватный конструктор для ограничения реализации getInstance ()
@@ -36,11 +36,13 @@ class Core
     public static function getInstance()
     {
         global $db_conf;
+
         if (is_null(self::$_instance)) {
             self::$_instance = new self();
             self::$_instance->_db = new PDO($db_conf['dsn'], $db_conf['user'], $db_conf['password']);
             self::$_instance->_auth = new Auth();
         }
+
         return self::$_instance;
     }
 
@@ -51,9 +53,10 @@ class Core
     {
         $this->route();
 
-        $this->init_locale();
+        $this->initLocale();
 
         $controller = new $this->controllerName;
+
         return $controller->{$this->actionName}();
     }
 
@@ -76,29 +79,34 @@ class Core
         $path = array_shift($urlParams);
 
         // Если начало маршрута является префиксом локали
-        if(array_key_exists($path, $locales)){
+        if (array_key_exists($path, $locales)) {
             // устанавливеам язык
             $_SESSION['lang'] = $path;
             $path = array_shift($urlParams);
         }
 
         $controllerName = ucfirst($path);
-        if (!$controllerName) $controllerName = "Index";
+
+        if (!$controllerName) {
+            $controllerName = "Index";
+        }
+
         $controllerName .= $this->controllerSuffix;
 
         $actionName = strtolower(array_shift($urlParams));
+
         // Если экшн не указан
         if (!$actionName) {
             // И есть контроллер для первого параметра в адресе
-            if(class_exists($controllerName)){
+            if (class_exists($controllerName)) {
                 $actionName = "index";
-            }
-            // Иначе первый параметр является экшеном для index контроллера
-            else{
+            } else {
+                // Иначе первый параметр является экшеном для index контроллера
                 $actionName = strtolower(str_replace($this->controllerSuffix, '', $controllerName));
-                $controllerName = "Index".$this->controllerSuffix;
+                $controllerName = "Index" . $this->controllerSuffix;
             }
         }
+
         $actionName .= $this->actionSuffix;
 
         $this->controllerName = $controllerName;
@@ -108,11 +116,11 @@ class Core
     /**
      * Инициализация локализации
      */
-    private function init_locale()
+    private function initLocale()
     {
         global $locales;
 
-        if  (!isset($_SESSION['lang'])) {
+        if (!isset($_SESSION['lang'])) {
             self::$lang = 'ru';
         } else self::$lang = $_SESSION['lang'];
 
@@ -120,20 +128,20 @@ class Core
 
         if (!defined('LC_MESSAGES')) define('LC_MESSAGES', 5);
 
+        $codeset = 'UTF-8';
         $domain = 'message';
 
         putenv('LC_ALL=' . self::$locale);
 
         setlocale(LC_MESSAGES, self::$locale);
 
+        bindtextdomain($domain, LOCALE_DIR);
+        bind_textdomain_codeset($domain, $codeset);
+        textdomain($domain);
+
         if (!setlocale(LC_ALL, self::$locale)) {
             setlocale(LC_ALL, '');
         }
-
-        bindtextdomain($domain, LOCALE_DIR);
-        bind_textdomain_codeset($domain, 'UTF-8');
-        textdomain($domain);
-
     }
 
     /**
@@ -163,4 +171,24 @@ class Core
 
     }
 
+    public static function __autoload($className)
+    {
+        $directories = [
+            CLASSES_DIR,
+            MODEL_DIR,
+            CONTROLLERS_DIR
+        ];
+
+        foreach ($directories as $directory) {
+            $path = $directory . $className . '.class.php';
+
+            if (file_exists($path)) {
+                require_once($path);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

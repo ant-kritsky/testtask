@@ -8,7 +8,7 @@ class View
 {
     private $_path;
     private $_template;
-    private $_var = array();
+    private $_var = [];
 
     public function __construct($path = '')
     {

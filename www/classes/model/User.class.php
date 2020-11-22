@@ -35,7 +35,7 @@ class User extends Model
      */
     public function updateHash($hash = null)
     {
-        if(mb_strlen($hash) < 3) return false;
+        if (mb_strlen($hash) < 3) return false;
         $query = $this->_db->prepare("UPDATE {$this->_table} SET `hash`=:hash WHERE id=:id");
         $query->bindParam(":id", $this->id, PDO::PARAM_INT, 11);
         $query->bindParam(":hash", $hash, PDO::PARAM_STR, 150);
@@ -48,7 +48,7 @@ class User extends Model
      */
     public function getByLoginAndPass($login = null, $password = null)
     {
-        if($login == null or $password == null) return false;
+        if ($login == null or $password == null) return false;
         $query = $this->_db->prepare("SELECT * FROM {$this->_table} WHERE `email`=:login AND `password`=:password");
         $query->bindParam(":login", $login, PDO::PARAM_STR);
         $query->bindParam(":password", $password, PDO::PARAM_STR);
