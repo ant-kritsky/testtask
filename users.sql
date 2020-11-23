@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS  `users` (
     `file_ext` VARCHAR( 10 ) NOT NULL ,
     `email` VARCHAR( 150 ) NOT NULL ,
     `password` VARCHAR( 150 ) NOT NULL ,
-    `hash` VARCHAR( 50 ) NOT NULL ,
+    `hash` varchar(50) DEFAULT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     PRIMARY KEY (  `id` ) ,
     UNIQUE KEY  `email` (  `email` ) ,
